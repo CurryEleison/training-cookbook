@@ -3,6 +3,7 @@ powershell_script 'Install IIS' do
   not_if "(Get-WindowsFeature -Name Web-Server).Installed"
 end
 
+
 service 'w3svc' do
   action [:start, :enable]
 end
